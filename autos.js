@@ -26,12 +26,12 @@ function agregar() {
   console.log(
     `marca: ${marca} modelo:${modelo} anio:${anio} precio${precio}`
     );
-  autosAgencia.push({ marca: marca, modelo: modelo, anio: anio, precio: precio, });
-
   if (marca === '' || modelo === '' || isNaN(anio) || isNaN(precio)) {
-    window.alert('Verifique el ingreso de los datos');
-    return;
-    }
+      window.alert('Verifique el ingreso de los datos');
+      return;
+      }
+  
+  autosAgencia.push({ marca: marca, modelo: modelo, anio: anio, precio: precio, });
   nuevo();
   mostrar();
   }
