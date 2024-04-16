@@ -32,6 +32,7 @@ function agregar() {
     window.alert('Verifique el ingreso de los datos');
     return;
     }
+  nuevo();
   mostrar();
   }
 
