@@ -17,3 +17,36 @@ function mostrar() {
   });
   document.getElementById('tblAutos').innerHTML = filas;
 }
+
+function agregar() {
+  let marca = document.getElementById('inputMarca').value;
+  let modelo = document.getElementById('inputModelo').value;
+  let anio = parseInt(document.getElementById('inputAnio').value);
+  let precio = parseFloat(document.getElementById('inputPrecio').value);
+  console.log(
+    `marca: ${marca} modelo:${modelo} anio:${anio} precio${precio}`
+    );
+  autosAgencia.push({ marca: marca, modelo: modelo, anio: anio, precio: precio, });
+
+  if (marca === '' || modelo === '' || isNaN(anio) || isNaN(precio)) {
+    window.alert('Verifique el ingreso de los datos');
+    return;
+    }
+  mostrar();
+  }
+
+function nuevo() {
+    document.getElementById('inputMarca').value = '';
+    document.getElementById('inputModelo').value = '';
+    document.getElementById('inputAnio').value = '';
+    document.getElementById('inputPrecio').value = '';
+    }
+
+
+function eliminarUltimo() {
+      if (autosAgencia.length > 0) {
+      autosAgencia.pop();
+      mostrar();
+      }
+      }
+    
